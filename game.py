@@ -3,6 +3,8 @@
 
 print("Rock, Paper, Scissors, Shoot!")
 
+import random
+
 #print(10)
 #print(10, 99, "My message", "another message")
 
@@ -31,4 +33,38 @@ if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "sciss
 else:
     print("OOPS, invalid input. Please try again.")
     exit()
+
+
+valid_options = ["rock", "paper", "scissors"]
+computer_choice = random.choice(valid_options)
+print("COMPUTER CHOICE: ", computer_choice)
+
+if (user_choice == "rock") and (computer_choice == "scissors"):
+    print("Rock beats Scissors")
+else:
+    if(user_choice == "rock") and (computer_choice == "paper"):
+        print("Paper beats Rock")
+    else:
+        if(user_choice == "rock") and (computer_choice == "rock"):
+            print("Tie")
+        else:
+            if(user_choice == "scissors") and (computer_choice == "scissors"):
+                print("Tie")
+            else:
+                if(user_choice == "scissors") and (computer_choice == "rock"):
+                    print("Rock beats Scissors")
+                else:
+                    if(user_choice == "scissors") and (computer_choice == "paper"):
+                        print("Scissors beats Paper")
+                    else:
+                        if(user_choice == "paper") and (computer_choice == "rock"):
+                            print("Paper beats Rock")
+                        else:
+                            if(user_choice == "paper") and (computer_choice == "scissors"):
+                                print("Scissors beats Paper")
+                            else:
+                                if(user_choice == "paper") and (computer_choice == "paper"):
+                                    print("Tie")
+                                    exit()
+
 print("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN.")
