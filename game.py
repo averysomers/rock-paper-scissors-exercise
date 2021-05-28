@@ -1,16 +1,18 @@
 
 # game.py
 
-player_name = input("Please enter your name: ")
-
-print("Ready, "+player_name+"?")
-
-print("Rock, Paper, Scissors, Shoot!")
-
-from hashlib import scrypt
 import random
+import os
+import dotenv
+dotenv.load_dotenv()
+PLAYER_NAME = os.getenv("PLAYER_NAME")
+#print (PLAYER_NAME)
 
-user_choice = input("Please choose one of 'rock', 'paper', 'scissors': ")
+print ("-------------------")
+#print("Welcome", PLAYER_NAME, "to Rock, Paper, Scissors, Shoot!")
+print("Welcome "+ PLAYER_NAME + " to Rock, Paper, Scissors, Shoot!")
+
+user_choice = input("Please choose one of 'rock', 'paper', 'scissors' ")
 
 print("USER CHOICE: '"+user_choice+"'")
 
@@ -31,30 +33,30 @@ print("COMPUTER CHOICE: "+computer_choice)
 if (user_choice == ROCK):
     if (computer_choice == SCISSORS):
         print(ROCK+" beats "+SCISSORS)
-        print("Congrats, " +player_name+"! You win.")
+        print("Congrats, " +PLAYER_NAME+"! You win.")
     if (computer_choice == ROCK):
         print("Tie")
     if (computer_choice == PAPER):
         print(PAPER +" beats " +ROCK)
-        print("Sorry, " +player_name+". You lose.")
+        print("Sorry, " +PLAYER_NAME+". You lose.")
 
 if (user_choice == SCISSORS):
     if (computer_choice == SCISSORS):
         print("Tie")
     if (computer_choice == ROCK):
         print(ROCK +" beats " +SCISSORS)
-        print("Sorry, " +player_name+". You lose.")
+        print("Sorry, " +PLAYER_NAME+". You lose.")
     if (computer_choice == PAPER):
         print(SCISSORS +" beats " +PAPER)
-        print("Congrats, " +player_name+"! You win.")
+        print("Congrats, " +PLAYER_NAME+"! You win.")
 
 if (user_choice == PAPER):
     if (computer_choice == SCISSORS):
         print(SCISSORS+" beats "+PAPER)
-        print("Sorry, " +player_name+". You lose.")
+        print("Sorry, " +PLAYER_NAME+". You lose.")
     if (computer_choice == ROCK):
         print(PAPER +" beats " +ROCK)
-        print("Congrats, " +player_name+"! You win.")
+        print("Congrats, " +PLAYER_NAME+"! You win.")
     if (computer_choice == PAPER):
         print("Tie")
 
